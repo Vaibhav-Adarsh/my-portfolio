@@ -1,8 +1,11 @@
 
 const express = require("express");
-const nodemailer = require("nodemailer");
+const { Resend } = require("resend");
 
 const router = express.Router();
+
+// Initialize Resend using the API key from environment variables
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 // Escape user input before inserting it into HTML emails
 function escapeHtml(value) {
@@ -15,19 +18,11 @@ function escapeHtml(value) {
     })[char]);
 }
 
-// Create the email transporter once
-const transporter = nodemailer.createTransport({
-    service: "gmail",
-    auth: {
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS
-    }
-});
-
 // Contact API
 router.post("/contact", async (req, res) => {
     const { name, email, subject, message } = req.body || {};
 
+    // Validate incoming form data
     if (
         typeof name !== "string" ||
         typeof email !== "string" ||
@@ -48,8 +43,9 @@ router.post("/contact", async (req, res) => {
         });
     }
 
-    if (!process.env.EMAIL_USER || !process.env.EMAIL_PASS) {
-        console.error("Email environment variables are missing.");
+    // Ensure the API key is configured
+    if (!process.env.RESEND_API_KEY) {
+        console.error("RESEND_API_KEY is missing.");
 
         return res.status(500).json({
             success: false,
@@ -58,9 +54,12 @@ router.post("/contact", async (req, res) => {
     }
 
     try {
-        await transporter.sendMail({
-            from: process.env.EMAIL_USER,
-            to: process.env.CONTACT_TO || "vaibhavadarsh07@gmail.com",
+        const { data, error } = await resend.emails.send({
+            from: "Portfolio <onboarding@resend.dev>",
+            to: [
+                process.env.CONTACT_TO ||
+                "vaibhavadarsh07@gmail.com"
+            ],
             replyTo: email.trim(),
             subject: `Portfolio Contact: ${subject.trim()}`,
             text: [
@@ -81,10 +80,22 @@ router.post("/contact", async (req, res) => {
             `
         });
 
+        if (error) {
+            console.error("Resend email failed:", error);
+
+            return res.status(500).json({
+                success: false,
+                message: "Unable to send your message right now."
+            });
+        }
+
+        console.log("Resend email accepted:", data?.id);
+
         return res.status(200).json({
             success: true,
             message: "Message sent successfully!"
         });
+
     } catch (error) {
         console.error("Email sending failed:", error.message);
 
