@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects | Vaibhav Adarsh</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/project.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+<body>
+    <header class="site-header" id="header">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="img/Vaibhav Adarsh Modern Monogram Logo.png" alt="Vaibhav">
+            </a>
+            <nav class="main-nav" id="navbar">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="experience.html">Experience</a></li>
+                    <li><a href="project.html" class="active">Projects</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="right-section">
+                <button class="theme-toggle" aria-label="Toggle theme">
+                    <span>◐</span>
+                </button>
+                <div class="resumeButton">
+                    <a class="resume" href="pdf/Vaibhav_Adarsh_CV.pdf" target="_blank" rel="noopener">Resume <span>→</span></a>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <main class="projects-page">
+        <section class="projects-intro" aria-labelledby="projects-title">
+            <div class="projects-intro-copy">
+                <span class="projects-label">My projects</span>
+                <h1 id="projects-title">Things I’ve <span>Built.</span></h1>
+                <p>A collection of projects that helped me learn, explore new technologies and turn ideas into real working products.</p>
+            </div>
+
+            <div class="projects-highlights">
+                <div class="project-stat">
+                    <span class="stat-icon" aria-hidden="true">⬡</span>
+                    <span><strong>3</strong><small>Major Projects</small></span>
+                </div>
+                <div class="project-stat">
+                    <span class="stat-icon" aria-hidden="true">▤</span>
+                    <span><strong>10+</strong><small>Technologies</small></span>
+                </div>
+                <div class="project-stat">
+                    <span class="stat-icon" aria-hidden="true">ϟ</span>
+                    <span><strong>1000+</strong><small>Lines of Code</small></span>
+                </div>
+                <div class="project-stat learning-stat">
+                    <span class="stat-icon" aria-hidden="true">∞</span>
+                    <span><strong>Continuous</strong><small>Learning</small></span>
+                </div>
+                <blockquote class="project-quote">
+                    <span aria-hidden="true">“</span>
+                    <p>I love building things — from clean UIs to robust backends. Each project teaches me something new and pushes me to grow.</p>
+                    <cite>— Vaibhav Adarsh</cite>
+                </blockquote>
+            </div>
+        </section>
+
+        <nav class="project-filters" aria-label="Filter projects">
+            <button class="project-filter is-active" type="button" data-filter="all" aria-pressed="true">All</button>
+            <button class="project-filter" type="button" data-filter="web" aria-pressed="false">Web Development</button>
+            <button class="project-filter" type="button" data-filter="backend" aria-pressed="false">Backend</button>
+            <button class="project-filter" type="button" data-filter="ecommerce" aria-pressed="false">E-Commerce</button>
+            <button class="project-filter" type="button" data-filter="personal" aria-pressed="false">Personal</button>
+            <button class="project-filter" type="button" data-filter="api" aria-pressed="false">APIs</button>
+        </nav>
+
+        <section class="project-grid" aria-label="Selected projects">
+            <article class="project-card" data-categories="web ecommerce">
+                <div class="project-preview shop-preview" aria-label="E-commerce storefront preview">
+                    <img src="img/project/image.png" alt="Screenshot of the e-commerce website project" loading="lazy">
+                </div>
+                <div class="project-content">
+                    <h2>E-Commerce Website</h2>
+                    <p>A full-featured e-commerce website concept with product listing, search, cart and checkout flows.</p>
+                    <div class="technology-tags" aria-label="Technologies">
+                        <span>HTML</span><span>Tailwind CSS</span><span>MongoDB</span><span>Javascript</span><span>Node.js</span>
+                    </div>
+                    <ul class="project-features">
+                        <li>Product discovery and search</li>
+                        <li>Cart and order management</li>
+                        <li>Payment integration ready</li>
+                    </ul>
+                    <div class="project-actions">
+                        <a href="https://github.com/Vaibhav-Adarsh" target="_blank" rel="noopener noreferrer" class="project-github">
+                            <span aria-hidden="true">◉</span> GitHub
+                        </a>
+                        <span class="project-unavailable" aria-disabled="true">Live Demo <span aria-hidden="true">↗</span></span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="project-card" data-categories="web personal">
+                <div class="project-preview portfolio-preview" aria-label="Portfolio website preview">
+                    <div class="portfolio-browser-bar">
+                        <span class="mini-monogram">V<span>A</span></span>
+                        <span>Home　 About　 Projects　 Contact</span>
+                        <span class="mini-resume">Resume ↗</span>
+                    </div>
+                    <div class="portfolio-hero">
+                        <div>
+                            <span class="preview-eyebrow">B.TECH AIML STUDENT</span>
+                            <strong>Hi, I’m<br><em>Vaibhav Adarsh.</em></strong>
+                            <small>I build web experiences and explore AI.</small>
+                            <span class="preview-button">View Projects</span>
+                        </div>
+                        <div class="portfolio-portrait">
+                            <img src="img/about profile.png" alt="" loading="lazy">
+                        </div>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <h2>Portfolio Website</h2>
+                    <p>A personal portfolio to showcase my projects, skills and journey with a clean, responsive design.</p>
+                    <div class="technology-tags" aria-label="Technologies">
+                        <span>HTML</span><span>CSS</span><span>JavaScript</span><span>Responsive Design</span><span>Nodejs</span>
+                    </div>
+                    <ul class="project-features">
+                        <li>Clean, minimal design</li>
+                        <li>Responsive across devices</li>
+                        <li>Project showcase and contact form</li>
+                    </ul>
+                    <div class="project-actions">
+                        <a href="https://github.com/Vaibhav-Adarsh" target="_blank" rel="noopener noreferrer" class="project-github">
+                            <span aria-hidden="true">◉</span> GitHub
+                        </a>
+                        <span class="project-unavailable" aria-disabled="true">Live Demo <span aria-hidden="true">↗</span></span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="project-card" data-categories="backend api">
+                <div class="project-preview course-preview" aria-label="Course platform API dashboard preview">
+                    <aside class="course-sidebar">
+                        <strong><span>◈</span> CourseHub API</strong>
+                        <span>◉　Overview</span>
+                        <span>⚙　Authentication</span>
+                        <span class="selected-course-nav">▤　Courses</span>
+                        <span>♙　Users</span>
+                        <span>▣　Orders</span>
+                    </aside>
+                    <div class="course-dashboard">
+                        <div class="course-topline"><strong>Courses</strong><span>Manage courses and access</span></div>
+                        <div class="course-api-row"><span>GET　/api/courses</span><b>Try it　→</b></div>
+                        <div class="course-code">
+                            <span>Response　　Headers　　Example</span>
+                            <code>{<br>　"success": true,<br>　"data": [<br>　　{ "title": "Web Development" },<br>　　{ "title": "AI &amp; ML" }<br>　]<br>}</code>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <h2>Course Selling App (Backend)</h2>
+                    <p>A backend system for a course-selling platform with user authentication, course management and payment integration.</p>
+                    <div class="technology-tags" aria-label="Technologies">
+                        <span>Node.js</span><span>Express.js</span><span>MongoDB</span><span>JWT</span>
+                    </div>
+                    <ul class="project-features">
+                        <li>Authentication and role-based access</li>
+                        <li>Course CRUD APIs</li>
+                        <li>Order and payment integration</li>
+                    </ul>
+                    <div class="project-actions">
+                        <a href="https://github.com/Vaibhav-Adarsh" target="_blank" rel="noopener noreferrer" class="project-github">
+                            <span aria-hidden="true">◉</span> GitHub
+                        </a>
+                        <span class="project-unavailable" aria-disabled="true">View API Docs <span aria-hidden="true">↗</span></span>
+                    </div>
+                </div>
+            </article>
+        </section>
+        <p class="no-projects" hidden>No projects match this category yet.</p>
+    </main>
+
+    <script src="js/index.js"></script>
+    <script src="js/project.js"></script>
+</body>
