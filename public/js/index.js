@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             try {
                 // Send the collected form data to the custom Node.js local backend
-                const response = await fetch('http://localhost:3000/api/contact', {
+                const response = await fetch('/api/contact', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
