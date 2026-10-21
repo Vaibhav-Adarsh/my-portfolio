@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             try {
                 // Send the collected form data to the custom Node.js local backend
-                const response = await fetch('/api/contact', {
+                const response = await fetch('https://my-portfolio-ic2b.onrender.com/api/contact', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
