@@ -1,8 +1,8 @@
-
+const cors = require("cors")
 const express = require("express");
-const nodemailer = require("nodemailer");
 const path = require("path");
 require("dotenv").config();
+
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -10,6 +10,12 @@ const PORT = process.env.PORT || 3000;
 // Middleware
 app.use(express.json({ limit: "10kb" }));
 app.use(express.urlencoded({ extended: true, limit: "10kb" }));
+
+app.use(cors({
+    origin: "https://vaibhav-adarsh.github.io",
+    methods: ["POST" , "OPTIONS"],
+    allowedHeaders: ["Content-Type"]
+}));
 
 // Serve your portfolio from the public folder
 app.use(express.static(path.join(__dirname, "public")));
